@@ -59,8 +59,8 @@ return require('packer').startup(function()
 -- LSP Kind, tiny plugin adds vscode-like pictograms to neovim built-in lsp 
   use 'onsails/lspkind.nvim'
 
--- onedark theme
-  use 'navarasu/onedark.nvim'
+-- tokyonight theme
+  use 'folke/tokyonight.nvim'
 
 -- colorizer
 --use 'norcalli/nvim-colorizer.lua'
