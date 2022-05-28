@@ -8,7 +8,7 @@ return require('packer').startup(function()
   use {
       "goolord/alpha-nvim",
       config = function()
-        require("plugins.config.alpha")
+        --require("plugins.config.alpha")
       end,
     }
 
