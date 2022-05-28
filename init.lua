@@ -8,6 +8,7 @@ require('autopairs-config')
 require('treesitter-config')
 require('whichkey-config')
 require('telescope-config')
+require('blankline-config')
 require('lsp')
 --vim.cmd('colorscheme tokyonight')
 -- Example config in Lua

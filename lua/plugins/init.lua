@@ -72,5 +72,9 @@ return require('packer').startup(function()
       require('gitsigns').setup()
     end
   }
+
+-- Blank Line [bautify indentation]
+  use "lukas-reineke/indent-blankline.nvim"
+
 end)
 
