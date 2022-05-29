@@ -1,8 +1,12 @@
 return require('packer').startup(function()
-  -- Packer can manage itself
+-- Packer can manage itself
+
   use 'wbthomason/packer.nvim' -- Package manager for neovim
-  use 'shaunsingh/nord.nvim' -- Nord colorsceme
-  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"} -- Treesitter and nvim-treesitter highlighting are an experimental feature of Neovim.
+
+-- use 'shaunsingh/nord.nvim' -- Nord colorsceme
+
+-- Treesitter and nvim-treesitter highlighting are an experimental feature of Neovim.
+  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('treesitter-config')"}
 
 -- Startup screen
   use {
@@ -15,11 +19,13 @@ return require('packer').startup(function()
 -- Lualine
   use {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt =  true }
+      requires = { 'kyazdani42/nvim-web-devicons', opt =  true },
+      event = "BufWinEnter",
+      config = "require('lualine-config')"
     }
 
 -- Bufferline
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('bufferline-config')"}
 
 -- Nvim Tree File Explorer
   use {
@@ -27,26 +33,40 @@ return require('packer').startup(function()
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
+    cmd = "NvimTreeToggle",
+    config = "require('nvim-tree-config')",
   }
 
 -- Rainbow tags [multicolor brackets] 
-  use{'p00f/nvim-ts-rainbow'}
+  use{'p00f/nvim-ts-rainbow', event = "BufWinEnter", after = "nvim-treesitter"}
 
 -- Autopairs tags
-  use{'windwp/nvim-autopairs'}
+  use{'windwp/nvim-autopairs',
+  config = "require('autopairs-config')",
+  after = "nvim-cmp"
+}
 
--- Which-key
-  use{'folke/which-key.nvim'}
+-- Which-key keybinder
+  use{'folke/which-key.nvim',
+  event = "BufWinEnter",
+  config = "require('whichkey-config')"
+  
+}
 
 -- Telescope Fuzzy Finder
   use {
   'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
+  requires = {{'nvim-lua/plenary.nvim'}},
+  cmd = "Telescope",
+  config = "require('telescope-config')"
   }
 
 --Nvim-cmp Autocompletion
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    config = "require('lsp')"
+  }
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -83,9 +103,18 @@ return require('packer').startup(function()
   }
 
 -- Blank Line [bautify indentation]
-  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufRead",
+    config = "require('blankline-config')"
+
+  }
 
 -- nvim comment
-  use 'terrortylor/nvim-comment'
+  use {
+    'terrortylor/nvim-comment',
+    event = "BufWinEnter",
+    config = "require('comment-config')"
+  }
 end)
 

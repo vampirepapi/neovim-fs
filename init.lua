@@ -1,16 +1,7 @@
 require('plugins')
 require('keybindings')
 require('options')
-require('lualine-config')
-require('bufferline-config')
-require('nvim-tree-config')
-require('autopairs-config')
-require('treesitter-config')
-require('whichkey-config')
-require('telescope-config')
-require('blankline-config')
-require('comment-config')
-require('lsp')
+
 --vim.cmd('colorscheme tokyonight')
 -- Example config in Lua
 -- vim.g.tokyonight_style = "night"
