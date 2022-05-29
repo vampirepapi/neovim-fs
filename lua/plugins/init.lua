@@ -60,8 +60,17 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'
 
 -- tokyonight theme
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
 
+-- rose pine theme
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    tag = 'v1.*',
+    config = function()
+        vim.cmd('colorscheme rose-pine')
+    end
+})
 -- colorizer
 --use 'norcalli/nvim-colorizer.lua'
 
@@ -76,5 +85,7 @@ return require('packer').startup(function()
 -- Blank Line [bautify indentation]
   use "lukas-reineke/indent-blankline.nvim"
 
+-- nvim comment
+  use 'terrortylor/nvim-comment'
 end)
 
