@@ -1,10 +1,11 @@
-# neovim-fs
 # My Neovim Setup ⚡
 
 **WIP! Go SLow!**
 
-[![Screenshot](./screenshot/screenshot1.png)](https://raw.githubusercontent.com/vampirepapi/neovim-fs/master/screenshot/screnshot1.png)
+![NeoVIM Main Screen](https://raw.githubusercontent.com/vampirepapi/neovim-fs/master/screenshot/screnshot1.png)
 
+![Neovim Working Project pov](https://raw.githubusercontent.com/vampirepapi/neovim-fs/master/screenshot/screenshot2.png)
+![LiveGrep Feature](https://raw.githubusercontent.com/vampirepapi/neovim-fs/master/screenshot/screenshot3.png)
 ## Table Of Content
 
 <!-- vim-markdown-toc GFM -->
