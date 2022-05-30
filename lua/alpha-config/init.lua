@@ -44,12 +44,20 @@ dashboard.section.buttons.val = {
 -- local fortune = require("alpha.fortune")
 -- dashboard.section.footer.val = fortune()
 
-dashboard.section.footer.val = {
-  "                       ",
-  "I Dont want to be Horny",
-  " I Just wanna be happy ",
-  "          🚀           ",
-  "                       ",
+local function footer()
+  local plugins = #vim.tbl_keys(packer_plugins)
+  local v = vim.version()
+  local datetime = os.date " %d-%m-%Y   %H:%M:%S"
+  local platform = vim.fn.has "win32" == 1 and "" or ""
+  return string.format(" %d   v%d.%d.%d %s  %s ", plugins, v.major, v.minor, v.patch, platform, datetime)
+end
+
+dashboard.section.footer.val = { footer()
+  -- "                       ",
+  -- "I Dont want to be Horny",
+  -- " I Just wanna be happy ",
+  -- "          🚀           ",
+  -- "                       ",
 }
 
 -- Send config to alpha
