@@ -3,7 +3,7 @@
 
 **WIP! Go SLow!**
 
-![Screenshot](./screenshot/screenshot1.png)
+[![Screenshot](./screenshot/screenshot1.png)](https://raw.githubusercontent.com/vampirepapi/neovim-fs/master/screenshot/screnshot1.png)
 
 ## Table Of Content
 
