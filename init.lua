@@ -13,3 +13,5 @@ require('options')
 
 -- -- Load the colorscheme
 -- vim.cmd[[colorscheme tokyonight]]
+
+
