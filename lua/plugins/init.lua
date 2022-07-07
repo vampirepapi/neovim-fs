@@ -63,10 +63,15 @@ return require('packer').startup(function()
   }
 
 --Nvim-cmp Autocompletion
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   config = "require('lsp')"
+  -- }
   use {
-    'neovim/nvim-lspconfig',
-    config = "require('lsp')"
-  }
+    "williamboman/nvim-lsp-installer",
+    "neovim/nvim-lspconfig",
+    config = "require('lsp')",
+}
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
